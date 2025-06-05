@@ -87,3 +87,29 @@ public <- public_response %>%
 combined_data <- new_pixar %>%
   left_join(public, by = "film")
 ```
+
+### d)
+
+```{r plot, echo=TRUE, error=FALSE, message=FALSE}
+series_films <- combined_data %>%
+  filter(film %in% series_candidates$film) %>%
+  mutate(series = case_when(
+    str_detect(film, "Toy Story") ~ "Toy Story",
+    str_detect(film, "Cars") ~ "Cars",
+    str_detect(film, "Incredibles") ~ "Incredibles",
+    str_detect(film, "Finding") ~ "Finding Series",
+    str_detect(film, "Monsters") ~ "Monsters Inc Series",
+    TRUE ~ "Other"
+  ))
+
+ggplot(series_films, aes(x = series, y = rotten_tomatoes, fill = film)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(
+    title = "Rotten Tomatoes Scores of Pixar Film Series",
+    x = "Film Series",
+    y = "Rotten Tomatoes Score (%)",
+    fill = "Film Title"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
