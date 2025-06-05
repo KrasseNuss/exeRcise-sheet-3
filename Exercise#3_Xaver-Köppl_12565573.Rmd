@@ -24,3 +24,9 @@ knitr::opts_chunk$set(echo = TRUE)
 -   If the developers don't create a working plan for their project and work at the same file, they will cause merging conflicts which has to be fixed manually.
 
 -   The git concept is very complex for beginners.
+
+## Exercise 2
+
+Link to my repository:
+
+<https://github.com/KrasseNuss/exeRcise-sheet-3.git>
