@@ -1,0 +1,26 @@
+---
+title: 'Exercise Sheet #3'
+author: "Xaver Köppl (12565573)"
+date: "2025-06-05"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 1
+
+### d)
+
+**Advantages:**
+
+-   Every Developer have history of changes. In case they have to fix an error, they can easily reverse it with the history.
+
+-   Branching and Merging allows the developers to work simultaneously at the same project.
+
+**Disadvantages:**
+
+-   If the developers don't create a working plan for their project and work at the same file, they will cause merging conflicts which has to be fixed manually.
+
+-   The git concept is very complex for beginners.
