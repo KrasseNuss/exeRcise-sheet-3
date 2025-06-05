@@ -113,3 +113,13 @@ ggplot(series_films, aes(x = series, y = rotten_tomatoes, fill = film)) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+
+## Exercise 4
+
+### c)
+
+Dataset Name: **Child Mortality Rates (Complete Gapminder, v10) (2017)**
+
+Link: [https://github.com/owid/owid-datasets/blob/master/datasets/Child%20Mortality%20Rates%20(Complete%20Gapminder%2C%20v10)%20(2017)/Child%20Mortality%20Rates%20(Complete%20Gapminder%2C%20v10)%20(2017).csv](https://github.com/owid/owid-datasets/blob/master/datasets/Child%20Mortality%20Rates%20(Complete%20Gapminder%2C%20v10)%20(2017)/Child%20Mortality%20Rates%20(Complete%20Gapminder%2C%20v10)%20(2017).csv){.uri}
+
+### d)
