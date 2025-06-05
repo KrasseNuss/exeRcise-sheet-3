@@ -123,3 +123,37 @@ Dataset Name: **Child Mortality Rates (Complete Gapminder, v10) (2017)**
 Link: [https://github.com/owid/owid-datasets/blob/master/datasets/Child%20Mortality%20Rates%20(Complete%20Gapminder%2C%20v10)%20(2017)/Child%20Mortality%20Rates%20(Complete%20Gapminder%2C%20v10)%20(2017).csv](https://github.com/owid/owid-datasets/blob/master/datasets/Child%20Mortality%20Rates%20(Complete%20Gapminder%2C%20v10)%20(2017)/Child%20Mortality%20Rates%20(Complete%20Gapminder%2C%20v10)%20(2017).csv){.uri}
 
 ### d)
+
+How does the child mortality rate developed in Germany?
+
+```{r child mortality rate, echo=TRUE, error=FALSE, message=FALSE}
+child <- read_csv("Child_Mortality_Rates.csv")
+
+germany <- child %>%
+  filter(child$Entity == 'Germany', child$Year < 2026) %>%
+  rename(Child_Mortality = `Child mortality`)
+
+germany_fil <- germany %>%
+  filter(Year %% 10 == 0)
+
+ggplot(germany_fil, aes(x = Year, y = Child_Mortality)) +
+  geom_line(color ="steelblue", size = 1) +
+  geom_point(alpha = 0.7, color = "steelblue") +
+  labs(
+    title = "Development of Child Mortality in Germany",
+    subtitle = "Chart 1",
+    x = "Years",
+    y = "Child Mortality in Thousands"
+  ) +
+  theme_minimal() +
+  theme(panel.grid.major.y = element_line(color = "grey"), 
+        panel.grid.major.x = element_line(color = "grey"))
+```
+
+```{r table, echo=TRUE, error=FALSE, message=FALSE}
+knitr::kable(germany_fil, caption = "Table of the Development of Child Mortality in Germany")
+```
+
+As you can see the plot shows an increasing mortality until the peak is reached in the year 1840. The mortality rate was pretty stable, but slightly decreased in the year 1860. Afterwards it increased almost back to its peak in 1840. After 1870 the reduction of the mortality was significant and then 20th century started. During this time the mortality decreased rapidly and nowadays it is like "nothing" compared to the year 1840.
+
+In conclusion the mortality rate has decreased over the past two centuries. This reduction is due to the high hygiene standards and the possibility of medical treatment these days.
