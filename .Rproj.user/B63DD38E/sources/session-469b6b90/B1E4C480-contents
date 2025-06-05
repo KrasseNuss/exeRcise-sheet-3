@@ -50,3 +50,28 @@ new_pixar <- new_pixar %>%
 G: General audiences - all ages admitted
 
 PG: Parental guidance suggested
+
+### b)
+
+```{r film series, echo=TRUE, error=FALSE, message=FALSE}
+series_candidates <- pixar_films %>%
+  filter(str_detect(film, "Toy Story|Cars|Incredibles|Finding|Monsters")) %>%
+  mutate(series = case_when(
+    str_detect(film, "Toy Story") ~ "Toy Story",
+    str_detect(film, "Cars") ~ "Cars",
+    str_detect(film, "Incredibles") ~ "Incredibles",
+    str_detect(film, "Finding") ~ "Finding Series",
+    str_detect(film, "Monsters") ~ "Monsters Inc Series",
+    TRUE ~ "Other"
+  ))
+
+series_summary <- series_candidates %>%
+  group_by(series) %>%
+  summarise(
+    films = paste(film, collapse = ", "),
+    count = n()
+  )
+
+knitr::kable(series_summary, caption = "Series")
+
+```
