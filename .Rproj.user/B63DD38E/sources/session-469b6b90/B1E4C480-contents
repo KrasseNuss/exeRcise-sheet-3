@@ -73,5 +73,17 @@ series_summary <- series_candidates %>%
   )
 
 knitr::kable(series_summary, caption = "Series")
+```
 
+### c)
+
+```{r public response, echo=TRUE, error=FALSE, message=FALSE}
+public_response <- read_csv("public_response.csv")
+
+cinema_levels <- c("F", "D-", "D", "D+", "C-", "C", "C+", "B-", "B", "B+", "A-", "A", "A+")
+public <- public_response %>%
+  mutate(cinema_score = factor(cinema_score, levels = cinema_levels, ordered = TRUE))
+
+combined_data <- new_pixar %>%
+  left_join(public, by = "film")
 ```
