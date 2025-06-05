@@ -1,7 +1,7 @@
 {
     "id": "B1E4C480",
-    "path": "E:/R_programmieren/Exercise3/2025-exeRcise-sheet-3/Exercise#3_Xaver-Köppl_12565573.Rmd",
-    "project_path": "Exercise#3_Xaver-Köppl_12565573.Rmd",
+    "path": "E:/R_programmieren/Exercise3/2025-exeRcise-sheet-3/Exercise#3.Rmd",
+    "project_path": "Exercise#3.Rmd",
     "type": "r_markdown",
     "hash": "434675938",
     "contents": "",
@@ -19,15 +19,15 @@
         "rmdVisualWrapConfigured": "true",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "2310:1966",
+        "rmdVisualModeLocation": "2758:2069",
         "last_setup_crc32": "469b6b90799ae064"
     },
     "folds": "",
-    "lastKnownWriteTime": 1749123807,
+    "lastKnownWriteTime": 1749131316,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1749123807378,
+    "last_content_update": 1749131316,
     "read_only": false,
     "read_only_alternatives": []
 }

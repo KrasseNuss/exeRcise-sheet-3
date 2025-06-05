@@ -1,0 +1,8 @@
+"0","public_response <- read_csv(""public_response.csv"")"
+"0",""
+"0","cinema_levels <- c(""F"", ""D-"", ""D"", ""D+"", ""C-"", ""C"", ""C+"", ""B-"", ""B"", ""B+"", ""A-"", ""A"", ""A+"")"
+"0","public <- public_response %>%"
+"0","  mutate(cinema_score = factor(cinema_score, levels = cinema_levels, ordered = TRUE))"
+"0",""
+"0","combined_data <- new_pixar %>%"
+"0","  left_join(public, by = ""film"")"
