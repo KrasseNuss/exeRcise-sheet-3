@@ -7,6 +7,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 
 ## Exercise 1
@@ -30,3 +31,22 @@ knitr::opts_chunk$set(echo = TRUE)
 Link to my repository:
 
 <https://github.com/KrasseNuss/exeRcise-sheet-3.git>
+
+## Exercise 3
+
+### a)
+
+```{r load, echo=TRUE, error=FALSE, message=FALSE}
+pixar_films <- read_csv("pixar_films.csv")
+
+new_pixar <- pixar_films %>% filter(!is.na(film))
+
+unique(new_pixar$film_rating)
+
+new_pixar <- new_pixar %>%
+  mutate(film_rating_factor = factor(film_rating, levels = c("G", "PG")))
+```
+
+G: General audiences - all ages admitted
+
+PG: Parental guidance suggested
